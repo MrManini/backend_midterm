@@ -1,0 +1,1 @@
+export const DIRECTOR_REPOSITORY = Symbol('DIRECTOR_REPOSITORY');
