@@ -1,1 +1,2 @@
 export const DIRECTOR_REPOSITORY = Symbol('DIRECTOR_REPOSITORY');
+export const MOVIE_REPOSITORY = Symbol('MOVIE_REPOSITORY');

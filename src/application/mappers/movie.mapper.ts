@@ -6,5 +6,4 @@ export const toMovieDto = (m: Movie): MovieDto => ({
   title: m.title,
   year: m.year,
   directorId: m.directorId,
-  director: m.director,
 });
