@@ -1,6 +1,6 @@
-import { DirectorRepository } from '../../domain/repositories/director.repository';
-import { Director } from '../../domain/entities/director.entity';
-import { FindDirectorByIdDto } from '../dtos/find-director-by-id.dto';
+import { DirectorRepository } from '../../../domain/repositories/director.repository';
+import { Director } from '../../../domain/entities/director.entity';
+import { FindDirectorByIdDto } from '../../dtos/director/find-director-by-id.dto';
 
 export class FindDirectorByIdUseCase {
   constructor(private readonly directorRepo: DirectorRepository) {}

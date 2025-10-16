@@ -1,5 +1,5 @@
 import { Director } from '../../domain/entities/director.entity';
-import { DirectorDto } from '../dtos/director.dto';
+import { DirectorDto } from '../dtos/director/director.dto';
 
 export const toDirectorDto = (d: Director): DirectorDto => ({
   id: d.id,

@@ -1,6 +1,6 @@
-import { DirectorRepository } from '../../domain/repositories/director.repository';
-import { Director } from '../../domain/entities/director.entity';
-import { UpdateDirectorDto } from '../dtos/update-director.dto';
+import { DirectorRepository } from '../../../domain/repositories/director.repository';
+import { Director } from '../../../domain/entities/director.entity';
+import { UpdateDirectorDto } from '../../dtos/director/update-director.dto';
 
 export class UpdateDirectorUseCase {
   constructor(private readonly directorRepo: DirectorRepository) {}

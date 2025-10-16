@@ -1,11 +1,11 @@
 import { Controller, Get, Post, Param, Body, BadRequestException, Delete, Put } from '@nestjs/common';
 import { ApiProperty, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { CreateDirectorUseCase } from '../../application/use-cases/create-director.usecase';
+import { CreateDirectorUseCase } from '../../application/use-cases/director/create-director.usecase';
 import { toDirectorDto } from '../../application/mappers/director.mapper';
-import { ListDirectorsUseCase } from 'src/application/use-cases/list-directors.usecase';
-import { FindDirectorByIdUseCase } from 'src/application/use-cases/find-director-by-id.usecase';
-import { DeleteDirectorUseCase } from 'src/application/use-cases/delete-director.usecase';
-import { UpdateDirectorUseCase } from 'src/application/use-cases/update-director.usecase';
+import { ListDirectorsUseCase } from 'src/application/use-cases/director/list-directors.usecase';
+import { FindDirectorByIdUseCase } from 'src/application/use-cases/director/find-director-by-id.usecase';
+import { DeleteDirectorUseCase } from 'src/application/use-cases/director/delete-director.usecase';
+import { UpdateDirectorUseCase } from 'src/application/use-cases/director/update-director.usecase';
 
 class CreateDirectorRequest {
   @ApiProperty() name!: string;

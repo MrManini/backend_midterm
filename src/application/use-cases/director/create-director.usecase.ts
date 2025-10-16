@@ -1,7 +1,7 @@
 import { randomUUID } from 'crypto';
-import { DirectorRepository } from '../../domain/repositories/director.repository';
-import { Director } from '../../domain/entities/director.entity';
-import { CreateDirectorDto } from '../dtos/create-director.dto';
+import { DirectorRepository } from '../../../domain/repositories/director.repository';
+import { Director } from '../../../domain/entities/director.entity';
+import { CreateDirectorDto } from '../../dtos/director/create-director.dto';
 
 export class CreateDirectorUseCase {
   constructor(private readonly directorRepo: DirectorRepository) {}
