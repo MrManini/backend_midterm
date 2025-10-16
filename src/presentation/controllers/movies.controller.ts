@@ -2,8 +2,8 @@ import { Controller, Get, Post, Param, Body, BadRequestException, Delete, Put } 
 import { ApiProperty, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { CreateMovieUseCase } from '../../application/use-cases/movie/create-movie.usecase';
 import { toMovieDto } from '../../application/mappers/movie.mapper';
-/*
 import { ListMoviesUseCase } from 'src/application/use-cases/movie/list-movies.usecase';
+/*
 import { FindMovieByIdUseCase } from 'src/application/use-cases/movie/find-movie-by-id.usecase';
 import { DeleteMovieUseCase } from 'src/application/use-cases/movie/delete-movie.usecase';
 import { UpdateMovieUseCase } from 'src/application/use-cases/movie/update-movie.usecase';
@@ -24,8 +24,8 @@ class DeleteMovieRequest {
 export class MoviesController {
   constructor(
     private readonly createMovie: CreateMovieUseCase,
-    /*
     private readonly listMovies: ListMoviesUseCase,
+    /*
     private readonly findMovieById: FindMovieByIdUseCase,
     private readonly deleteMovie: DeleteMovieUseCase,
     private readonly updateMovie: UpdateMovieUseCase,
@@ -49,7 +49,7 @@ export class MoviesController {
     }
   }
 
-  /*
+  
   @Get()
   @ApiOperation({ summary: 'Get all movies', description: 'Gets a list of all existing movies'})
   @ApiResponse({ status: 200, description: 'Movie list succesfully returned' })
@@ -58,7 +58,7 @@ export class MoviesController {
     return movieList;
   }
   
-
+  /*
   @Get(':id')
   @ApiOperation({ summary: 'Get a movie by their ID', description: 'Gets a movie by their ID'})
   @ApiResponse({ status: 200, description: 'Movie data succesfully retrieved'})
