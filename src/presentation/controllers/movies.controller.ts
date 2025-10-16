@@ -5,7 +5,7 @@ import { toMovieDto } from '../../application/mappers/movie.mapper';
 import { ListMoviesUseCase } from 'src/application/use-cases/movie/list-movies.usecase';
 import { FindMovieByIdUseCase } from 'src/application/use-cases/movie/find-movie-by-id.usecase';
 import { DeleteMovieUseCase } from 'src/application/use-cases/movie/delete-movie.usecase';
-//import { UpdateMovieUseCase } from 'src/application/use-cases/movie/update-movie.usecase';
+import { UpdateMovieUseCase } from 'src/application/use-cases/movie/update-movie.usecase';
 
 class CreateMovieRequest {
   @ApiProperty() title!: string;
@@ -25,7 +25,7 @@ export class MoviesController {
     private readonly listMovies: ListMoviesUseCase,
     private readonly findMovieById: FindMovieByIdUseCase, 
     private readonly deleteMovie: DeleteMovieUseCase,
-    //private readonly updateMovie: UpdateMovieUseCase,
+    private readonly updateMovie: UpdateMovieUseCase,
   ) {}
 
   @Post()
@@ -86,14 +86,14 @@ export class MoviesController {
       throw error;
     }
   }
-  /*
+  
   @Put(':id')
   @ApiOperation({ summary: 'Update a movie by their ID', description: 'Updates a movie by their ID'})
   @ApiResponse({ status: 200, description: 'Movie data succesfully updated'})
   @ApiResponse({ status: 400, description: 'A required field is empty'})
   async update(@Param('id') id: string, @Body() body: CreateMovieRequest) {
     try {
-      const movie = await this.updateMovie.execute({id: id, name: body.name, nationality: body.nationality, birthYear: body.birthYear});
+      const movie = await this.updateMovie.execute({id: id, title: body.title, year: body.year, directorId: body.directorId});
       return toMovieDto(movie);
     } catch (error) {
       if (error instanceof Error && error.message.includes('required')) {
@@ -102,5 +102,5 @@ export class MoviesController {
       throw error;
     }
   }
-  */
+  
 }

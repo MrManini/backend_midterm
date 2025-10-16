@@ -7,7 +7,7 @@ import { CreateMovieUseCase } from '../../application/use-cases/movie/create-mov
 import { ListMoviesUseCase } from '../../application/use-cases/movie/list-movies.usecase';
 import { FindMovieByIdUseCase } from 'src/application/use-cases/movie/find-movie-by-id.usecase';
 import { DeleteMovieUseCase } from 'src/application/use-cases/movie/delete-movie.usecase';
-//import { UpdateMovieUseCase } from 'src/application/use-cases/movie/update-movie.usecase';
+import { UpdateMovieUseCase } from 'src/application/use-cases/movie/update-movie.usecase';
 
 const usePrisma = !!process.env.DATABASE_URL;
 
@@ -42,13 +42,12 @@ const usePrisma = !!process.env.DATABASE_URL;
       useFactory: (repo: any) => new DeleteMovieUseCase(repo),
       inject: [MOVIE_REPOSITORY],
     },
-    /*
     {
       provide: UpdateMovieUseCase,
       useFactory: (repo: any) => new UpdateMovieUseCase(repo),
       inject: [MOVIE_REPOSITORY],
     },
-    */
+
   ],
 })
 export class MovieModule {}
