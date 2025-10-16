@@ -4,10 +4,8 @@ import { CreateMovieUseCase } from '../../application/use-cases/movie/create-mov
 import { toMovieDto } from '../../application/mappers/movie.mapper';
 import { ListMoviesUseCase } from 'src/application/use-cases/movie/list-movies.usecase';
 import { FindMovieByIdUseCase } from 'src/application/use-cases/movie/find-movie-by-id.usecase';
-/*
 import { DeleteMovieUseCase } from 'src/application/use-cases/movie/delete-movie.usecase';
-import { UpdateMovieUseCase } from 'src/application/use-cases/movie/update-movie.usecase';
-*/
+//import { UpdateMovieUseCase } from 'src/application/use-cases/movie/update-movie.usecase';
 
 class CreateMovieRequest {
   @ApiProperty() title!: string;
@@ -25,11 +23,9 @@ export class MoviesController {
   constructor(
     private readonly createMovie: CreateMovieUseCase,
     private readonly listMovies: ListMoviesUseCase,
-    private readonly findMovieById: FindMovieByIdUseCase,
-    /*
+    private readonly findMovieById: FindMovieByIdUseCase, 
     private readonly deleteMovie: DeleteMovieUseCase,
-    private readonly updateMovie: UpdateMovieUseCase,
-    */
+    //private readonly updateMovie: UpdateMovieUseCase,
   ) {}
 
   @Post()
@@ -74,7 +70,7 @@ export class MoviesController {
       throw error;
     }
   }
-  /*
+  
   @Delete()
   @ApiOperation({ summary: 'Delete a movie by their ID', description: 'Deletes a movie by their ID'})
   @ApiResponse({ status: 200, description: 'Movie data succesfully deleted'})
@@ -90,7 +86,7 @@ export class MoviesController {
       throw error;
     }
   }
-
+  /*
   @Put(':id')
   @ApiOperation({ summary: 'Update a movie by their ID', description: 'Updates a movie by their ID'})
   @ApiResponse({ status: 200, description: 'Movie data succesfully updated'})
